@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="false"
+         bootstrap="app/phpunit_bootstrap.php"
+>
+    <testsuites>
+        <testsuite name="Silex Test Suite">
+            <directory>./vendor/Silex/tests/Silex/</directory>
+        </testsuite>
+        <!--<testsuite name="Your Project Test Suite">-->
+            <!--<directory>./src/YourProject/</directory>-->
+        <!--</testsuite>-->
+    </testsuites>
+</phpunit>

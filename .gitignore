@@ -1,0 +1,7 @@
+*.log
+phpunit.xml
+config/config.php
+web/.htaccess
+vendor/*
+.boilerplate
+deps

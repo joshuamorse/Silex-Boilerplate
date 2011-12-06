@@ -1,0 +1,35 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * A convinient way to get a Silex project up and running quickly. 
+ * Currently incomplete.
+ *
+ * @author Joshua Morse <dashvibe@gmail.com> 
+ */
+
+$dirs = array('app', 'src', 'web', 'vendor');
+
+echo "Project name:\n";
+$handle = fopen('php://stdin', 'r');
+$project_name = fgets($handle);
+
+echo "> Setting up project src dir.\n";
+system(sprintf('mkdir %s%s', __DIR__.'/../src/', $project_name));
+system(sprintf('touch %s%s', __DIR__.'/../', '.boilerplate'));
+
+//file_put_contents(__DIR__.'/../.boilerplate', $project_name);
+
+echo "> Setting up config.php.\n";
+system(sprintf('cp %s %s', __DIR__.'/../app/config.php.dist', __DIR__.'/../app/config.php'));
+
+echo "> Setting up phpunit.xml.\n";
+system(sprintf('cp %s %s', __DIR__.'/../phpunit.xml.dist', __DIR__.'/../phpunit.xml'));
+
+echo "> Setting up .htaccess.\n";
+system(sprintf('cp %s %s', __DIR__.'/../web/htaccess.dist', __DIR__.'/../web/.htaccess'));
+
+echo "> Setting up deps\n";
+system(sprintf('cp %s %s', __DIR__.'/../deps.dist', __DIR__.'/../deps'));
+
+system('./bin/vendors install');
