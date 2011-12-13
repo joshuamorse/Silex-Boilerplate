@@ -5,3 +5,4 @@ web/.htaccess
 vendor/*
 .boilerplate
 deps
+*.vim
